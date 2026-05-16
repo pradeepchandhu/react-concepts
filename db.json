@@ -1,0 +1,49 @@
+{
+  "users": [
+    {
+      "id": 1,
+      "email": "user1@gmail.com",
+      "password": "1234"
+    },
+    {
+      "id": 2,
+      "email": "user2@gmail.com",
+      "password": "abcd"
+    },
+    {
+      "name": "Generic H2 (Embedded)",
+      "email": "PRADEEPCHANDHU2003@GMAIL.COM",
+      "id": 3
+    },
+    {
+      "name": "",
+      "email": "",
+      "id": 4
+    },
+    {
+      "name": "",
+      "email": "",
+      "id": 5
+    },
+    {
+      "name": "",
+      "email": "",
+      "id": 6
+    },
+    {
+      "name": "Pradeep",
+      "email": "PRADEEPCHANDHU2003@GMAIL.COM",
+      "id": 7
+    },
+    {
+      "name": "samsung s 24 ultra",
+      "email": "PRADEEPCHANDHU2003@GMAIL.COM",
+      "id": 8
+    },
+    {
+      "name": "samsung s 24 ultra",
+      "email": "PRADEEPCHANDHU2003@GMAIL.COM",
+      "id": 9
+    }
+  ]
+}

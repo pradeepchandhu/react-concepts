@@ -1,0 +1,475 @@
+React Hooks and State Management Documentation
+==============================================
+
+Project Overview
+----------------
+This project is a React practice application developed using Vite and JavaScript.
+It demonstrates important React concepts including component-based architecture,
+state management, hooks, routing, API integration, and performance optimization.
+
+The project is designed to strengthen understanding of modern React development
+through practical examples and reusable components.
+
+==============================================================
+
+1. useState Hook
+================
+
+Purpose
+-------
+The useState hook is used to create and manage local state inside functional components.
+It allows components to store and update dynamic data without reloading the page.
+
+Syntax
+------
+const [state, setState] = useState(initialValue);
+
+How It Works
+------------
+- 'state' stores the current value.
+- 'setState' updates the value.
+- Updating state automatically re-renders the component.
+
+Features Implemented Using useState
+-----------------------------------
+- Counter functionality
+- Form handling
+- Input field updates
+- Toggle buttons
+- Dynamic rendering
+- User interaction handling
+
+Example
+-------
+const [count, setCount] = useState(0);
+
+<button onClick={() => setCount(count + 1)}>
+   Increment
+</button>
+
+Benefits
+--------
+- Easy state handling
+- Real-time UI updates
+- Simplifies interactive applications
+
+Components Using useState
+-------------------------
+- App.jsx
+- Home.jsx
+- One.jsx
+- Two.jsx
+- Parent.jsx
+- Users.jsx
+- UserDetails.jsx
+
+==============================================================
+
+2. useEffect Hook
+=================
+
+Purpose
+-------
+The useEffect hook is used to perform side effects in React components.
+
+Examples of Side Effects
+------------------------
+- Fetching API data
+- Updating DOM manually
+- Timers and intervals
+- Running code when component loads
+- Listening to changes in state or props
+
+Syntax
+------
+useEffect(() => {
+   // side effect code
+}, [dependencies]);
+
+Dependency Array
+----------------
+1. Empty Array []
+   Runs only once after component mount.
+
+2. With Dependencies [value]
+   Runs whenever dependency changes.
+
+3. Without Dependency Array
+   Runs after every render.
+
+Example
+-------
+useEffect(() => {
+   fetchUsers();
+}, []);
+
+Features Implemented
+--------------------
+- Fetching user data from APIs
+- Updating UI after data retrieval
+- Lifecycle management
+
+Benefits
+--------
+- Replaces lifecycle methods from class components
+- Cleaner and more organized side-effect handling
+
+Components Using useEffect
+--------------------------
+- Users.jsx
+- UserDetails.jsx
+
+==============================================================
+
+3. useContext Hook
+==================
+
+Purpose
+-------
+The useContext hook is used for global state management and data sharing
+between multiple components without passing props manually at every level.
+
+Problem Solved
+--------------
+Normally, data is passed using props:
+Parent -> Child -> SubChild
+
+This becomes difficult in large applications.
+useContext avoids this issue (called prop drilling).
+
+How Context API Works
+---------------------
+1. Create Context
+2. Provide Context
+3. Consume Context using useContext
+
+Example
+-------
+const UserContext = createContext();
+
+const value = useContext(UserContext);
+
+Features Implemented
+--------------------
+- Shared global data
+- Accessing common information in nested components
+
+Benefits
+--------
+- Cleaner code
+- Easier state sharing
+- Reduces unnecessary prop passing
+
+Components Using useContext
+---------------------------
+- Blog.jsx
+- One.jsx
+- SubChild.jsx
+- Two.jsx
+
+==============================================================
+
+4. useMemo Hook
+===============
+
+Purpose
+-------
+useMemo is used for performance optimization.
+
+It stores calculated values in memory and prevents recalculating them
+unless dependencies change.
+
+Problem Solved
+--------------
+Expensive calculations can slow down applications.
+useMemo avoids unnecessary recalculations.
+
+Syntax
+------
+const memoizedValue = useMemo(() => {
+   return expensiveCalculation(data);
+}, [data]);
+
+Benefits
+--------
+- Faster rendering
+- Improved performance
+- Prevents unnecessary calculations
+
+Component Using useMemo
+-----------------------
+- Two.jsx
+
+==============================================================
+
+5. useCallback Hook
+===================
+
+Purpose
+-------
+useCallback is used to memoize functions.
+
+It prevents functions from being recreated on every render.
+
+Syntax
+------
+const memoizedFunction = useCallback(() => {
+   // function logic
+}, [dependencies]);
+
+Benefits
+--------
+- Improves performance
+- Prevents unnecessary child component re-renders
+- Useful when passing functions as props
+
+Component Using useCallback
+---------------------------
+- One.jsx
+
+==============================================================
+
+6. React Router Hooks
+=====================
+
+a) useNavigate
+---------------
+
+Purpose
+-------
+Used for navigating programmatically between routes/pages.
+
+Example
+-------
+const navigate = useNavigate();
+
+navigate("/home");
+
+Use Cases
+---------
+- Redirect after login
+- Navigation after form submission
+- Error page navigation
+
+Component Using useNavigate
+---------------------------
+- NotFound.jsx
+
+--------------------------------------------------------------
+
+b) useParams
+------------
+
+Purpose
+-------
+Used to access dynamic route parameters.
+
+Example Route
+-------------
+/users/:id
+
+Example
+-------
+const { id } = useParams();
+
+Use Cases
+---------
+- Fetching user-specific data
+- Product details pages
+- Dynamic profile pages
+
+Component Using useParams
+-------------------------
+- UserDetails.jsx
+
+==============================================================
+
+7. State Management Concepts Practiced
+======================================
+
+1. Local State Management
+-------------------------
+Managing state inside individual components using useState.
+
+2. Global State Management
+--------------------------
+Sharing data globally using Context API.
+
+3. State Lifting
+----------------
+Moving state from child components to parent components
+to share data between components.
+
+4. Controlled Components
+------------------------
+Handling form inputs using React state.
+
+5. Data Flow
+------------
+Passing data:
+- Parent to Child using Props
+- Child to Parent using Callback Functions
+
+==============================================================
+
+8. API Integration
+==================
+
+Purpose
+-------
+The project demonstrates how to fetch and display data from APIs.
+
+Methods Used
+------------
+- fetch()
+- async/await
+
+Features
+--------
+- Fetching users
+- Displaying dynamic data
+- Handling loading states
+
+Benefits
+--------
+- Real-world application practice
+- Backend integration understanding
+
+==============================================================
+
+9. Routing
+==========
+
+Purpose
+-------
+Routing allows navigation between different pages/components
+without reloading the application.
+
+Features
+--------
+- Dynamic Routes
+- Navigation
+- Not Found Page
+- Route Parameters
+
+Technology Used
+---------------
+- React Router DOM
+
+==============================================================
+
+10. Component-Based Architecture
+================================
+
+Purpose
+-------
+React applications are built using reusable components.
+
+Benefits
+--------
+- Code reusability
+- Easier maintenance
+- Better scalability
+- Cleaner project structure
+
+Types of Components Used
+------------------------
+- Functional Components
+- Layout Components
+- Reusable UI Components
+
+==============================================================
+
+11. Performance Optimization
+============================
+
+Optimization Techniques Used
+----------------------------
+- useMemo
+- useCallback
+
+Benefits
+--------
+- Reduced unnecessary rendering
+- Improved application speed
+- Better user experience
+
+==============================================================
+
+12. Project Features
+====================
+
+Implemented Features
+--------------------
+- React Hooks
+- Context API
+- Routing
+- API Fetching
+- Dynamic Components
+- User Navigation
+- State Management
+- Memoization
+- Reusable Components
+- Event Handling
+- Form Handling
+
+==============================================================
+
+13. Technologies Used
+=====================
+
+Frontend
+--------
+- React
+- JavaScript
+- Vite
+
+Libraries
+---------
+- React Router DOM
+
+Concepts
+--------
+- Hooks
+- State Management
+- Context API
+- Routing
+- API Integration
+- Memoization
+
+==============================================================
+
+14. Learning Outcomes
+=====================
+
+Through this project, the following concepts were practiced:
+
+- Functional Components
+- React Hooks
+- State Management
+- API Integration
+- Routing
+- Component Communication
+- Performance Optimization
+- Reusable Component Design
+- Dynamic Rendering
+- Modern React Development
+
+==============================================================
+
+Conclusion
+==========
+
+This project serves as a practical implementation of modern React concepts.
+It demonstrates how React hooks, routing, state management, and reusable
+components work together to build scalable and interactive frontend applications.
+
+The project provides hands-on experience with:
+- React fundamentals
+- Real-world component structure
+- Hook usage
+- Application flow
+- Performance optimization techniques
+
+This practice project helps in building a strong foundation for
+full-stack and frontend React development.
